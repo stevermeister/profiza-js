@@ -1,0 +1,91 @@
+$navbar: (
+	color: map-get($colors, darkGray),
+	activeColor: map-get($colors, red),
+	toggler: (
+		color: map-get($colors, darkGray)
+	)
+);
+
+.navbar{
+	color: map-get($navbar, color);
+	border: none;
+	@include media ('<tablet'){
+		min-height: 50px;
+		z-index: 1;
+	}
+	.navbar-brand{
+		padding: 0 15px;
+		margin: 32px 0 0 -8px;
+		height: auto;
+		@include media ('<tablet'){
+			margin-top: 10px;
+		}
+	}
+	.btn-centered{
+		@include absolute-centered-el;
+	}
+	.dropdown{
+		display: inline-block;
+	}
+	.logo{
+		width: 147px;
+	}
+}
+
+.dropdown-toggle{
+	@include animate (color); 
+	font-weight: 500;
+	display: inline-block;
+	margin-top: 36px;
+	margin-bottom: 34px;
+	padding-top: 0;
+	padding-bottom: 0;
+	color: map-deep-get($navbar, toggler, color);
+	&:hover,
+	&:focus{
+		color: map-get($navbar, activeColor);
+	}
+	@include media ('<tablet'){
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+.navbar-brand{
+	@include media ('<tablet'){
+		padding: 15px 15px 0;
+		height: auto;
+	}
+}
+
+.navbar-toggle{
+	display: none;
+	margin: 7px 0 0 0;
+}
+
+.navbar-right{
+	margin-right: -20px;
+	@include media ('<tablet'){
+		@include absolute-vertical-centered-el;
+		left: auto;
+		right: 0;
+		margin: 0 10px 0 0;
+	}
+}
+
+.navbar-nav .open .dropdown-menu{
+	@include media ('<tablet'){
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: auto;
+		background: map-get($colors, white);
+	}
+}
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover{
+	background: none;
+	border: none;
+}

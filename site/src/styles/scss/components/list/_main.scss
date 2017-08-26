@@ -1,0 +1,63 @@
+$list: (
+	color: map-get($colors, muted),
+	activeColor: map-get($colors, red),
+    defaultDark: (
+        color: map-get($colors, black),
+    ),
+    dotted: (
+        counterColor: map-get($colors, black),
+        border: #bfbfbf,
+        itemBg: map-get($colors, white)
+    ),
+    socials: (
+        color: #cdd8e2,
+        border: #cdd8e2,
+        activeColor: darken(#cdd8e2, 20%),
+        activeBorder: darken(#cdd8e2, 20%)
+    ),
+    category: (
+        color: map-get($colors, darkGray),
+        activeColor: map-get($colors, red)
+    ),
+    vocabluary: (
+        color: map-get($colors, muted),
+        activeColor: map-get($colors, red),
+        counterColor: map-get($colors, lightGray)
+    )
+);
+
+.default-list {
+    color: map-get($list, color);
+    @extend %listreset;
+    li {
+        @extend .v-align;
+        margin: 0 0 14px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    a:not([class^="link"]) {
+    	@include animate (color);
+        @extend .v-align;
+        display: block;
+        width: 100%;
+        color: inherit;
+        &:hover{
+        	color: map-get($list, activeColor);
+        }
+    }
+}
+
+.default-list-dark{
+    @extend .default-list;
+    font-weight: 500;
+    color: map-deep-get($list, defaultDark, color);
+}
+
+@import 'list-horizontal';
+@import 'list-dotted';
+@import 'list-socials';
+@import 'list-category';
+@import 'list-vocabluary';
+@import 'list-inline';
+@import 'list-middle-dot';

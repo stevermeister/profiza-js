@@ -1,0 +1,61 @@
+$searchBar: (
+	background: map-get($colors, white),
+	radius: map-get($radius, defaultRadius)
+);
+
+.search-bar {
+    @include shadow;
+    padding: 31px 30px 27px;
+    border-radius: map-get($searchBar, radius);
+    background: map-get($searchBar, background);
+    @include media ('<tablet'){
+    	padding: 15px;
+    }
+    .btn {
+        min-width: 170px;
+    }
+    .control-label {
+        position: absolute;
+        bottom: -22px;
+    }
+    .v-align {
+        @include media ('<tablet') {
+            flex-flow: row wrap;
+        }
+        [class^="col-"] {
+            @include media ('<tablet') {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+            &:last-child{
+            	@include media ('<tablet') {
+	                margin-bottom: 0;
+	            }	
+            }
+        }
+    }
+}
+
+
+.search-bar-box {
+    position: relative;
+    max-width: 830px;
+    width: 100%;
+    margin: 0 auto;
+    @include media ('<tablet'){
+        padding: 0 15px;
+        margin-top: 30px;
+    }
+    .search-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin-top: -48px;
+        @include media ('<tablet'){
+            position: static;
+            transform: none;
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,122 @@
+.user-card-lg {
+    margin-bottom: 30px;
+    padding: 30px 30px 4px;
+    @include media ('<tablet'){
+        padding: 30px 15px 15px; 
+    }
+    .img-container {
+        float: left;
+        margin-right: 30px;
+    }
+    .user-card-description {
+        overflow: hidden;
+        padding: 0;
+    }
+    .h2.h2 {
+        margin: 2px 0;
+    }
+    .h3 {
+        font-size: 16px;
+        display: inline-block;
+        margin: 0 22px 0 0;
+    }
+    .user-row {
+        margin-bottom: 18px;
+        @extend .v-align;
+        @include media ('<tablet'){
+            flex-flow: row wrap;
+            margin-bottom: 5px;
+        }
+    }
+    .address {
+        margin-right: 18px;
+    }
+    .add-option {
+        margin: 0;
+    }
+    .list-achievement {
+        margin: -6px 0 0;
+        li {
+            display: inline-block;
+            margin-right: 22px;
+        }
+        [class^='icon-'] {
+            margin-right: 9px;
+        }
+    }
+    .mark-sm {
+        top: -21px;
+        right: 10px;
+    }
+    .video-play-link{
+        line-height: 25px;
+    }
+}
+
+.add-info-container {
+    float: left;
+    width: 140px;
+    margin-right: 30px;
+    @include media ('<tablet'){
+        width: 100%;
+    }
+    .btn-box {
+        margin-bottom: 30px;
+        .btn {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.basic-info-box {
+    @extend %clearfix;
+    margin: 0 0 19px;
+    @include media ('<tablet'){
+        margin-bottom: 10px;
+    }
+}
+
+.full-info-box {
+    @extend %clearfix;
+}
+
+.add-info-item {
+    @extend %clearfix;
+    @extend .v-align;
+    @include animate (color);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    display: block;
+    color: map-get($colors, muted);
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    &:hover {
+        color: darken(map-get($colors, muted), 10%);
+    }
+    .review-icon,
+    .img-rounded {
+        float: left;
+        margin-right: 10px;
+    }
+}
+
+.review-icon {
+    @include animate (color border-color);
+    @extend .v-align;
+    font-size: 20px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: map-deep-get($userCard, icons, review, color);
+    border: 4px solid map-deep-get($userCard, icons, review, border);
+    border-radius: 50%;
+    justify-content: center;
+    &:hover {
+        color: map-deep-get($userCard, icons, review, activeColor);
+        border-color: map-deep-get($userCard, icons, review, activeBorder);
+    }
+    [class^="icon-"]{
+        margin: 2px 0 0 2px;
+    }
+}

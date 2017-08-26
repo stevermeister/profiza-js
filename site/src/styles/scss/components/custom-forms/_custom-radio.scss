@@ -1,0 +1,34 @@
+.custom-radio{
+	@extend .v-align;
+	color: map-deep-get($customForms, radioBtn, color);
+}
+
+.radio-btn{
+	position: relative;
+	width: 49px;
+	height: 20px;
+	border-radius: map-deep-get($customForms, radioBtn, radius);
+	border: 1px solid map-deep-get($customForms, radioBtn, border);
+	box-shadow: inset 0 0 10px map-deep-get($customForms, radioBtn, shadow);
+	cursor: pointer;
+	margin: 0 10px;
+	input[type='checkbox'],
+	input[type='radio']{
+		@include hide-elem;
+		&:checked{
+			& + .radio-btn-toggle{
+				left: auto;
+				right: 3px;
+			}
+		}
+	}
+}
+
+.radio-btn-toggle{
+	@include absolute-vertical-centered-el;
+	left: 3px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: map-deep-get($customForms, radioBtn, toggleBg);
+}

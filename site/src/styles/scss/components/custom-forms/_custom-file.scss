@@ -1,0 +1,29 @@
+.custom-file {
+	@extend .v-align;
+	@include animate (color);
+    font-weight: 400;
+    cursor: pointer;
+    color: map-deep-get($customForms, file, color);
+    &:hover{
+    	color: map-deep-get($customForms, file, activeColor);
+    	.round-shape{
+    		color: map-deep-get($customForms, file, activeShapeColor);
+        	border: 1px solid map-deep-get($customForms, file, activeShapeBorder);
+    	}
+    }
+    input[type='file'] {
+        @include hide-elem;
+    }
+    .round-shape {
+    	@extend .v-align;
+    	@include animate (color border-color);
+        font-size: 20px;
+        height: 60px;
+        margin-right: 10px;
+        color: map-deep-get($customForms, file, shapeColor);
+        border: 1px solid map-deep-get($customForms, file, shapeBorder);
+        border-radius: 50%;
+        justify-content: center;
+        flex: 0 0 60px;
+    }
+}

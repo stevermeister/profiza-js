@@ -1,0 +1,52 @@
+.btn {
+    @include shadow;
+    font-weight: 500;
+    line-height: 20px;
+    min-width: 210px;
+    padding: 10px 14px 8px;
+    border-radius: 30px;
+    border-width: 2px;
+    outline: none !important;
+    .text-muted-xs {
+        font-size: 12px;
+        margin: 0 4px 0 0;
+    }
+    .text-muted-lg{
+        font-size: 18px;
+        line-height: 18px;
+        margin: 0 9px 0 0;
+    }
+    .icon-add{
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+.btn-block {
+    min-width: auto;
+}
+
+.btn-sm {
+    @extend .btn;
+    font-size: 15px;
+    padding: 4px 20px;
+}
+
+.btn-primary {
+    &:hover {
+        background: map-deep-get($buttons, primary, hoverBg);
+        color: map-deep-get($buttons, primary, hoverColor);
+        border-color: map-deep-get($buttons, primary, hoverBorder);
+        .text-muted,
+        .text-muted-xs{
+            color: map-deep-get($buttons, primary, hoverColor);
+        }
+    }
+}
+
+.btn-icon-left{
+    @include v-align;
+    [class^="icon-"]{
+        margin-right: 2px;
+    }
+}

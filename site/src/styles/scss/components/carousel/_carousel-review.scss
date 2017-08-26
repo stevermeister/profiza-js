@@ -1,0 +1,111 @@
+.carousel-inner {
+    > .item {
+        height: auto;
+    }
+}
+
+.carousel-indicators {
+	@include v-align;
+    top: 0;
+    right: -183px;
+    bottom: auto;
+    left: auto;
+    top: -65px;
+    @include media ('<tablet'){
+    	top: auto;
+    	left: 0;
+    	right: 0;
+    	bottom: -10px;
+    	width: 100%;
+    	margin: 0;
+    }
+    li {
+        width: 6px;
+        height: 6px;
+        margin: 0 7px;
+        opacity: 1;
+        background: map-deep-get($slider, pagination, background);
+        border: none;
+        @include animate (background);
+        @include media ('<tablet') {
+            width: 10px;
+            height: 10px;
+        }
+        &:hover {
+            background: darken(map-deep-get($slider, pagination, background), 15%);
+        }
+        &.active {
+            width: 10px;
+            height: 10px;
+            background: map-deep-get($slider, pagination, activeBackground);
+            margin: 0 6px;
+            @include media ('<tablet') {
+                width: 15px;
+                height: 15px;
+            }
+            &:hover {
+                background: darken(map-deep-get($slider, pagination, activeBackground), 15%);
+            }
+        }
+    }
+}
+
+.carousel-indicators-disabled{
+    .carousel-indicators{
+        display: none;
+    }    
+}
+
+.carousel-caption {
+	position: static;
+    padding: 0;
+    text-align: left;
+    text-shadow: none;
+}
+
+.carousel-control {
+    display: none;
+}
+
+.thumbnail-review {
+    float: left;
+    width: 33.33%;
+    margin: 0;
+    @include media ('<tablet') {
+        width: 100%;
+    }
+}
+
+.review-body {
+    font-size: 14px;
+    font-style: italic;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 16px 30px 0 37px;
+    text-align: left;
+    @include media ('<tablet') {
+        padding: 15px;
+    }
+    .rate-box{
+        font-size: 12px;
+        font-weight: 500;
+        color: map-deep-get($slider, review, ratebox, color);
+    }
+}
+
+.review-description {
+    margin-bottom: 48px;
+}
+
+.review-info {
+    font-size: 13px;
+    font-style: normal;
+    &.thin-line {
+        &:before {
+            top: -15px;
+        }
+    }
+    .author {
+        font-weight: 500;
+    }
+}

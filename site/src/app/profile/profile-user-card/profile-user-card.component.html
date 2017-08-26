@@ -1,0 +1,208 @@
+<section class="user-card">
+    <div class="img-container">
+        <img [src]="user.avatar" alt="img-description" class="user-card-img" width="340" height="340">
+        <div class="mark-sm">
+            <span class="counter">{{user.score}}</span>
+        </div>
+    </div>
+    <div class="user-card-description">
+        <h2 class="h2">{{user.name}}</h2>
+        <h3 class="h3">{{speciality.title}}</h3>
+        <address class="address">
+            <i class="icon-pin"></i>{{user.location}}
+        </address>
+        <div class="add-option">
+            <i class="icon-car"></i>выезд к клиенту
+        </div>
+        <ul class="list-achievement">
+            <li><i class="icon-check"></i>Собеседование пройдено</li>
+            <li><i class="icon-check"></i>Данные проверены</li>
+        </ul>
+        <a href="#" class="video-play-link"><i class="icon-play"></i>Показать видеообращение</a>
+    </div>
+</section>
+<ul class="list-horizontal text-uppercase">
+    <li><a href="#price" class="text-muted text-dotted">Услуги и цены</a></li>
+    <li><a href="#about-master" class="text-muted text-dotted">О мастере</a></li>
+    <li><a href="#photos" class="text-muted text-dotted">Фото (14)</a></li>
+    <li><a href="#reviews" class="text-muted text-dotted">Отзывы (21)</a></li>
+</ul>
+<ngb-accordion [closeOthers]="true" activeIds="1" class="panel-group profile-panel-list">
+  <!-- Prices !-->
+  <ngb-panel id="1">
+  <ng-template ngbPanelTitle>
+    <div class="panel-default">
+      <div class="panel-heading" id="price">
+        <h4 class="panel-title">
+          <span tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+            <span uib-accordion-header="" ng-class="{'text-muted': isDisabled}" class="ng-binding">
+              Услуги и цены
+            </span>
+            <i class="icon-chevron-thin-down"></i>
+          </span>
+        </h4>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template ngbPanelContent class="panel-collapse collapse">
+      <div class="panel-body">
+          <ul *ngFor="let work of user.works" class="list-dotted ng-scope" >
+              <li><span class="items">{{work.summary}}</span><span class="counter">{{work.price}}</span></li>
+          </ul>
+      </div>
+  </ng-template>
+  </ngb-panel>
+  <!-- About Master !-->
+  <ngb-panel id="2">
+      <ng-template ngbPanelTitle>
+        <div class="panel-default">
+          <div class="panel-heading" id="about-master">
+            <h4 class="panel-title">
+              <span class="accordion-toggle">
+                <span class="ng-binding">
+                  О мастере
+                </span>
+                <i class="icon-chevron-thin-down"></i>
+              </span>
+            </h4>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbPanelContent class="panel-collapse collapse">
+          <div class="panel-body">
+              <section class="section-about ng-scope">
+                  <h6 class="h6">Опыт и спортивные достижения</h6>
+                  <p>Кандидат в мастера спорта по бодибилдингу и фитнесу (2007 г.).
+                      <br>Участник чемпионатов мира по бодибилдингу и фитнесу.
+                      <br> Занимается фитнесом с 2000 года, бодибилдингом с 2002 года.
+                      <br> Опыт работы в сфере фитнеса – более 10 лет (элитные фитнес-клубы Киева; тренер
+                      <br> и руководитель студии функционального тренинга; фитнес-директор сети тренажёрных залов).
+                      <br>Чемпионка Киева и Киевской области по бодифитнесу IFBB (2006, 2007 гг.). </p>
+                  <h6 class="h6">Образование</h6>
+                  <p>УАБиФ, факультет спортивного менеджмента, специальность – менеджмент спортивной организации (2008 г.).
+                      <br>Ассоциация профессионалов фитнеса (FPA) при РГУФКСМиТ – «Тренер по бодибилдингу и фитнесу», «Мастер тренер по бодибилдингу и фитнесу» (2006 г.), «Избыточная масса тела и ожирение: причины возникновения, патогенез, современные принципы и методы коррекции», «Особенности фитнес-тренировки беременных», «Функциональный тренинг» (2006-2007 гг.), «Особенности тренировок при нарушениях осанки и сколиотической болезни, а так же при остеохондрозе и межпозвоночных грыжах» (2011 г.).
+                      <br> Школа управления FPA – «Управляющий фитнес-клубом», «Фитнес-директор» (2008-2009 гг.). Studio Pilates Madrid (P.M.А.) – сертифицированный пилатес тренер (2006-2011 гг.). </p>
+                  <h6 class="h6">Публикации</h6>
+                  <p>Автор первого бесплатного портала о кроссфит.
+                      <br> «Что же такое пилатес?».
+                      <br>«Пилатес — реабилитация позвоночника и суставов. F.A.Q.».
+                      <br> «Что такое кроссфит?».
+                      <br> «Жиросжигание и питание».
+                      <br> «Кубики пресса делаются на кухне, а не в тренажёрном зале».
+                      <br> «Как правильно отслеживать изменения фигуры?».
+                      <br>«Главное в работе над телом — правильная постановка цели». </p>
+              </section>
+          </div>
+      </ng-template>
+  </ngb-panel>
+  <!-- Photos !-->
+  <ngb-panel id="3">
+    <ng-template ngbPanelTitle>
+      <div class="panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <span tabindex="0" class="accordion-toggle">
+              <span class="ng-binding">
+                Фото (14)
+              </span>
+              <i class="icon-chevron-thin-down"></i>
+            </span>
+          </h4>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent class="panel-collapse collapse">
+      <div class="panel-body">
+          <ul class="gallery">
+              <li>
+                  <a href="#"><img src="assets/images/gallery-1.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+              <li>
+                  <a href="#"><img src="assets/images/gallery-2.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+              <li>
+                  <a href="#"><img src="assets/images/gallery-3.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+              <li>
+                  <a href="#"><img src="assets/images/gallery-4.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+              <li>
+                  <a href="#"><img src="assets/images/gallery-5.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+              <li>
+                  <a href="#"><img src="assets/images/gallery-6.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+              <li>
+                  <a href="#"><img src="assets/images/gallery-7.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+              <li>
+                  <a href="#"><img src="assets/images/gallery-8.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+              <li>
+                  <a href="#"><img src="assets/images/gallery-9.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+              <li>
+                  <a href="#"><img src="assets/images/gallery-10.jpg" alt="Img-description" width="120" height="120"></a>
+              </li>
+          </ul>
+      </div>
+    </ng-template>
+  </ngb-panel>
+  <!-- Feedbacks !-->
+  <ngb-panel id="4">
+      <ng-template ngbPanelTitle>
+        <div class="panel-default">
+          <div class=" panel-heading">
+            <h4 class="panel-title">
+              <span class="accordion-toggle">
+                <span class="ng-binding">
+                  Отзывы о работе специалиста
+                </span>
+                <i class="icon-chevron-thin-down hidden-on-open"></i>
+                <span class="slider-counter">
+                    <span class="prev">&lt;</span>
+                    <span class="active-item">1</span>/21
+                    <span class="next">&gt;</span>
+                </span>
+              </span>
+            </h4>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbPanelContent class="panel-collapse collapse">
+          <div class="panel-body">
+              <div class="carousel-indicators-disabled carousel">
+                  <div class="carousel-inner">
+                      <div class="item active">
+                          <div class="text-center">
+                              <div class="carousel-caption carousel-rating">
+                                  <div class="thumbnail-review">
+                                      <div class="mark-lg center-block">
+                                          <span class="counter">5</span>
+                                      </div>
+                                      <div class="caption">
+                                          <div class="rate-box">
+                                              <p>Средний рейтинг <span class="text-md"><b class="ng-binding">4,8</b></span></p>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="review-body">
+                                      <div class="review-description text-muted">
+                                          <p>Добрый день! Наш репетитор Иванникова Наталья Викторовна, является профессионалом, очень качественно и грамотно выстраивает отношения с учеником, пунктуальна. Очень довольны знакомством с ней. Будем продолжать сотрудничество.</p>
+                                      </div>
+                                      <div class="review-info text-muted thin-line">
+                                          <span class="author">Ирина</span>
+                                          <span>,</span>
+                                          <span class="date">4 сентября 2016</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+

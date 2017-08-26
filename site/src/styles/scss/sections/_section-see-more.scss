@@ -1,0 +1,13 @@
+.section-see-more {
+    padding: 50px;
+    @include media ('<tablet'){
+    	padding: 0;
+    }
+    .h3{
+    	font-weight: 700;
+    	margin: 10px 0 30px;
+    	@include media ('<tablet'){
+    		margin: 0 0 30px;
+    	}
+    }
+}

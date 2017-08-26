@@ -1,0 +1,134 @@
+$panel: (
+	background: map-get($colors, white),
+	border: #e7eef3,
+	radius: map-get($radius, defaultRadius),
+	activeColor: map-get($colors, red),
+	title: (
+		color: map-get($colors, black),
+	),
+	icon: (
+		color: #abbdcb
+	),
+	user: (
+		heading: (
+			border: #e7eef3
+		)
+	)
+);
+
+.panel{
+	.slider-counter{
+		@include elem-hide;
+	}
+	&-open{
+		.slider-counter{
+			@include elem-show;
+		}
+		.hidden-on-open{
+			@include elem-hide;
+		}
+	}
+}
+
+.panel-default{
+	@include shadow;
+	border: none;
+	background: map-get($panel, background);
+	> .panel-heading{
+		@include animate (color);
+		position: relative;
+		display: flex;
+		align-items: center;
+		background: inherit;
+		height: 65px;
+		border-color: map-get($panel, border);
+		padding: 0 28px;
+		border-radius: map-get($panel, radius);
+		[class^="icon-"]{
+			@include absolute-vertical-centered-el;
+			right: 32px;
+			font-size: 8px;
+			color: map-deep-get($panel, icon, color);
+		}
+		&:hover{
+			color: map-get($panel, activeColor);
+		}
+		@include media ('<tablet'){
+			height: auto;
+			padding: 15px;
+		}
+		.slider-counter {
+		    margin-left: auto;
+		}
+	}
+}
+
+.panel-title{
+	font-size: 18px;
+	font-weight: 500;
+	width: 100%;
+	height: 100%;
+	color: map-deep-get($panel, title, color);
+}
+
+.panel-body{
+	padding: 22px 30px 30px;
+	@include media ('<tablet'){
+		padding: 15px;
+	}
+}
+
+.panel-group {
+	.panel{
+		border-radius: map-get($panel, radius);
+	}
+    .panel+.panel {
+    	margin-top: 30px;
+    }
+}
+
+.accordion-toggle{
+	@extend .v-align;
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	outline: none;
+	&:hover{
+		color: map-get($panel, activeColor);
+	}
+}
+
+.user-container {
+  .profile-panel-list {
+    .slider-counter {
+      display: none;
+    }
+    .panel-body {
+      background: #fff;
+      border-top: 1px solid #ddd;
+      border-radius: 0 0 4px 4px;
+    }
+    .panel-default {
+      border-radius: 4px;
+    }
+    .card {
+      margin:-30px 0 30px;
+      .card-block {
+        box-shadow: 0 3px 2px -2px #d5deef;
+        border-radius: 0 0 4px 4px;
+      }
+      .card-header {
+        margin-top: 30px;
+        border-radius: 4px;
+        &.active {
+          .panel-default {
+            border-radius: 4px 4px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import 'panel-user';

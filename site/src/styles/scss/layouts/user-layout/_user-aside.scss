@@ -1,0 +1,55 @@
+.user-aside {
+    overflow: hidden;
+    padding-left: 30px;
+    @include media ('<desktop') {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .section {
+        margin: 0 0 49px;
+        @include media ('<desktop') {
+            padding: 0;
+            margin: 0 0 30px;
+        }
+    }
+    .section-sm {
+        max-width: 270px;
+        @include media ('<desktop') {
+            max-width: 100%;
+        }
+    }
+    .section-socials {
+        margin: 0 0 45px;
+    }
+    .section-schedule {
+        margin-bottom: 52px;
+        @include media ('<desktop') {
+            margin-bottom: 30px;
+        }
+    }
+    .btn-box {
+        .btn {
+            margin-bottom: 20px;
+        }
+    }
+    .default-list {
+        font-size: 14px;
+        max-width: 170px;
+        .counter {
+            font-size: inherit;
+            width: 57%;
+        }
+        li {
+            margin: 0 0 11px;
+        }
+    }
+    .list-socials {
+        padding: 3px 0 25px;
+        @include media ('<desktop') {
+            padding: 0;
+        }
+    }
+    .h3 {
+        margin-bottom: 12px;
+    }
+}

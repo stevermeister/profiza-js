@@ -1,0 +1,89 @@
+$filterBar: (
+	background: map-get($colors, white),
+	radius: map-get($radius, defaultRadius),
+	color: map-get($colors, black),
+    shadow: #e6ebf4
+);
+
+.filter-bar {
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    padding: 25px 45px 25px 185px;
+    color: map-get($filterBar, color);
+    border-radius: map-get($filterBar, radius);
+    background: map-get($filterBar, background);
+    box-shadow: 0 6px 10px -2px map-get($filterBar, shadow);
+    @include media ('<widescreen') {
+        margin: 0 15px;
+        padding: 25px 15px 25px 110px;
+    }
+    @include media ('<desktop') {
+        padding: 25px;
+    }
+    @include media ('<tablet') {
+        padding: 15px;
+    }
+    .list-horizontal {
+        &.filter-list {
+            font-size: 15px;
+            font-weight: 400;
+            margin: 0 0 0 5px;
+            @include media ('<widescreen') {
+                margin: 0;
+            }
+            li {
+                margin: 0 7px 0 0;
+                @include media ('<desktop') {
+                    margin: 0 5px 5px 0;
+                }
+                @include media ('<tablet') {
+                    width: 100%;
+                    padding: 5px 0;
+                }
+                &:last-child {
+                    margin: 0 0 0 16px;
+                    @include media ('<tablet') {
+                        margin: 0;
+                    }
+                }
+            }
+            a {
+                font-size: 15px;
+                @include media ('<tablet') {
+                    display: inline-block;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+.filter-bar-inner {
+    text-align: left;
+    @include v-align;
+    @include media ('<widescreen') {
+        white-space: normal;
+    }
+}
+
+.filter-bar-img {
+    position: absolute;
+    top: -23px;
+    left: 53px;
+    @include media ('<widescreen') {
+        left: 15px;
+        @include absolute-vertical-centered-el;
+    }
+    @include media ('<desktop') {
+        position: static;
+        display: block;
+        margin: 0 auto 25px;
+        transform: none;
+    }
+    @include media ('<tablet') {
+        margin: 0 auto 15px;
+    }
+}
+
+

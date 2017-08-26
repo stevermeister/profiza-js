@@ -1,0 +1,32 @@
+.list-socials {
+    @extend %clearfix;
+    @extend %listreset;
+    font-size: 21px;
+    color: map-deep-get($list, socials, color);
+    li {
+        display: block;
+        float: left;
+        margin-right: 20px;
+    }
+    .icon {
+        @include animate (color border-color);
+        position: relative;
+        display: block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        color: inherit;
+        border: 2px solid map-deep-get($list, socials, border);
+        &:hover {
+            color: map-deep-get($list, socials, activeColor);
+            border-color: map-deep-get($list, socials, activeBorder);
+        }
+        [class^="icon-"]{
+            @include absolute-centered-el;
+        }
+    }
+    .icon-twitter {
+        font-size: 17px;
+        margin: 1px 0 0 1px;
+    }
+}

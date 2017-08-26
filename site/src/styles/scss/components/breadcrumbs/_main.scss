@@ -1,0 +1,29 @@
+$breadcrumb: (
+    color: map-get($colors, red),
+	activeColor: map-get($colors, muted)
+);
+
+.breadcrumb {
+	font-size: 14px;
+	margin-bottom: 6px;
+    color: map-get($breadcrumb, color);
+    padding: 7px 0;
+    > li {
+        & + li {
+            &:before {
+            	@extend [class^="icon-"];
+                @extend .icon-arrow-right;
+                position: relative;
+                top: 2px;
+                color: inherit;
+            }
+        }
+    }
+    a {
+    	@include animate (color);
+       	color: inherit;
+		&:hover{
+			color: map-get($breadcrumb, activeColor);
+		}
+    }
+}

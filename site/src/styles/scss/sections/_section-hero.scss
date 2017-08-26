@@ -1,0 +1,19 @@
+.section-hero {
+    min-height: 342px;
+    background: url('../images/hero-img.jpg') repeat;
+    @include media ('<desktop'){
+        display: flex;
+        align-items: center;
+    }
+    h2 {
+        line-height: 50px;
+        margin: 113px 0 0;
+        @include media ('<desktop'){
+            margin: 35px 0; 
+        }
+        @include media ('<tablet') {
+            line-height: 30px;
+            margin-bottom: 35px;
+        }
+    }
+}

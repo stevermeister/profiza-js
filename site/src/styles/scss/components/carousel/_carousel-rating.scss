@@ -1,0 +1,14 @@
+.carousel-rating{
+	.thumbnail-review{
+		width: 19%;
+		@include media ('<tablet'){
+			width: 100%;
+		}
+	}
+	.mark{
+		margin: 10px auto 17px;
+	}
+	.review-description{
+		margin-bottom: 27px;
+	}
+}

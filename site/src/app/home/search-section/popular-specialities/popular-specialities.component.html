@@ -1,0 +1,12 @@
+<div class="grid-item">
+  <div class="grid-header">
+    <span class="items">Популяные услуги</span>
+  </div>
+  <div class="grid-body">
+    <ul class="default-list">
+      <li *ngFor="let popularSpeciality of popularSpecialities">
+        <a routerLink="search" [queryParams]="{specialityId: popularSpeciality.id}"><span class="items">{{popularSpeciality.title}}</span><span class="counter"> {{popularSpeciality.totalWorkers| niceNumber}}</span></a>
+        </li>
+    </ul>
+  </div>
+</div>

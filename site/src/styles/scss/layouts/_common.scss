@@ -1,0 +1,125 @@
+//custom text modifiers 
+
+//color modifier
+.text-muted {
+    &.text-dotted {
+        border-bottom: 1px dotted map-get($colors, muted);
+    }
+    .text-dotted {
+        border-bottom: 1px dotted map-get($colors, muted);
+    }
+    a {
+        @include animate (color);
+        &:hover {
+            color: darken(map-get($colors, muted), 30%);
+        }
+    }
+}
+
+.text-dark{
+    color: map-get($colors, black);
+}
+
+.text-disabled{
+    color: map-get($colors, lightGray);
+}
+
+
+//font style modifiers
+.text-italic{
+    font-style: italic;
+}
+
+
+//font size modifiers
+.text-md{
+    font-size: 18px;
+}
+
+.small{
+    font-size: 12px;
+    line-height: 14px;
+}
+
+
+//font weight modifiers
+.text-medium{
+    font-weight: 500;
+}
+
+.info-container{
+    @extend %clearfix;
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.info-container-lg{
+    @extend .info-container;
+    max-width: 830px;
+}
+
+.divider{
+    background: #e7eef3;
+    width: 100%;
+    height: 1px;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.v-align{
+    display: flex;
+    align-items: center;
+}
+
+.section.section{
+    @extend %clearfix;
+    position: relative;
+    @include media ('<widescreen'){
+        padding: 30px 0 0;
+    } 
+    .row{
+        @include media ('<desktop'){
+            margin: 0;
+        }
+    }
+    .h2{
+        @include media ('<desktop'){
+            line-height: 1;
+            margin: 0 15px 30px;
+        }
+    }
+}
+
+.img-cirlce{
+    border-radius: 50%;
+}
+
+.highlited-box{
+    @extend %clearfix;
+    position: relative;
+    padding: 38px 30px 36px;
+    background-color: map-get($colors, mint);
+    &:before, &:after{
+        position: absolute;
+        top: -5px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 5px;
+        background: url("../images/border-triangle.png") repeat-x;
+    }
+    &:before{
+        transform: scaleY(-1);
+    }
+    &:after{
+        top: 100%;
+    }
+}

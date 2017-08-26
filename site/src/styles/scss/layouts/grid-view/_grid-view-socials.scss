@@ -1,0 +1,21 @@
+.grid-view-socials{
+	@extend .grid-view;
+	.grid-item{
+		@extend .v-align;
+		@include animate (color);
+		font-size: map-deep-get($gridView, socials, fontSize);
+		color: map-deep-get($gridView, socials, color);
+		height: 312px;
+		justify-content: center;
+		&:hover{
+			color: map-deep-get($gridView, socials, activeColor);
+		}
+		@include media ('<desktop'){
+			height: 200px;
+		}
+		@include media ('<tablet'){
+			font-size: 30px;
+			height: 76px;
+		}
+	}
+}

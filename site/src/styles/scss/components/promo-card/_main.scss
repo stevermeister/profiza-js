@@ -1,0 +1,56 @@
+$promoCard: (
+	background: map-get($colors, white),
+	radius: map-get($radius, defaultRadius)
+);
+
+.promo-card {
+    @extend %clearfix;
+    @extend .grid-item;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    background: map-get($promoCard, background);
+    border-radius: map-get($promoCard, radius);
+    overflow: hidden;
+    .h2 {
+        line-height: 36px;
+        margin: 5px 0 80px;
+        @include media ('<desktop') {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 0 0 20px;
+        }
+    }
+}
+
+.promo-card-img{
+    float: left;
+    border-radius: map-get($promoCard, radius) 0 0 map-get($promoCard, radius);
+    @include media ('<widescreen'){
+        border-radius: map-get($promoCard, radius);
+    }
+    @include media ('<desktop'){
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+.promo-card-caption {
+    overflow: hidden;
+    padding: 102px 30px 30px 65px;
+    @include media ('<widescreen'){
+        flex: 0 0 50%;
+    }
+    @include media ('<desktop'){
+        flex: 0 0 100%;
+        text-align: center;
+        margin: 0;
+        padding: 15px;
+    }
+    .btn{
+        margin-bottom: 30px;
+        @include media ('<tablet'){
+            margin-bottom: 15px;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<section class="user-card user-card-lg">
+  <div class="basic-info-box">
+    <div class="img-container">
+      <img [src]="user.avatar" alt="img-description" class="user-card-img" width="140" height="140">
+      <div class="mark-sm">
+        <span class="counter">{{user.score}}</span>
+      </div>
+    </div>
+    <div class="user-card-description">
+      <h2 class="h2" ><a [routerLink]="['/', 'profile', user.id]">{{user.name}}</a></h2>
+      <div class="user-row">
+        <h3 class="h3">{{user.speciality.title}}</h3>
+        <a href="#" class="video-play-link"><i class="icon-play"></i>Видеообращение</a>
+      </div>
+      <div class="user-row">
+        <address class="address">
+          <i class="icon-pin"></i>{{user.location}}
+        </address>
+        <div class="add-option">
+          <i class="icon-car"></i>выезд к клиенту
+        </div>
+      </div>
+      <ul class="list-achievement">
+        <li><i class="icon-check"></i>Собеседование пройдено</li>
+        <li><i class="icon-check"></i>Данные проверены</li>
+      </ul>
+    </div>
+  </div>
+  <div class="full-info-box">
+    <div class="add-info-container">
+      <a href="#" class="add-info-item">
+        <span class="review-icon">
+                                        <i class="icon-review"></i>
+                                    </span>
+        <span>Отзывы ({{user.reviewsCount}})</span>
+      </a>
+      <a href="#" class="add-info-item">
+        <img src="assets/images/user-rounded-img.jpg" alt="img-description" class="img-rounded" width="50" height="50">
+        <span>Фото ({{user.photoCount}})</span>
+      </a>
+    </div>
+    <div class="user-card-description">
+      <div class="panel panel-user">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <span>Услуги и цены</span>
+            <a href="#" class="link-default right-icon pull-right">Все услуги<i class="icon-arrow-right"></i></a>
+          </h4>
+        </div>
+        <div class="panel-collapse">
+          <div class="panel-body">
+            <ul *ngFor="let work of user.works" class="list-dotted" >
+              <li>
+                <span class="items">{{work.summary}}</span>
+                <span class="counter">{{work.price}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-user">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <span>О мастере</span>
+            <a href="#" class="link-default right-icon pull-right">Подробнее<i class="icon-arrow-right"></i></a>
+          </h4>
+        </div>
+        <div class="panel-collapse">
+          <div class="panel-body">
+            <p>{{user.description}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,73 @@
+$claimForm: (
+	quote: (
+		fontSize: 12px, 
+		color: #949494
+	)
+);
+
+.claim-form {
+    @extend %clearfix;
+    @extend .grid-item;
+    position: relative;
+    padding: 22px 30px 16px;
+    overflow: visible;
+    @include media ('<tablet') {
+        padding: 15px;
+    }
+    .h3 {
+        display: inline-block;
+        margin: 0 0 12px;
+        @include media ('<tablet'){
+            width: 100%;
+        }
+    }
+    .quote {
+        font-size: map-deep-get($claimForm, quote, fontSize);
+        letter-spacing: 0.6px;
+        color: map-deep-get($claimForm, quote, color);
+        float: right;
+        margin: 3px 13px 0 0px;
+        @include media ('<tablet') {
+            float: left;
+            margin: 0 0 20px;
+        }
+    }
+    .img-search {
+        position: absolute;
+        top: -11px;
+        left: -15px;
+        max-width: 40px;
+        @include media ('<desktop') {
+            top: -24px;
+            left: -6px;
+        }
+    }
+}
+
+.action-row {
+    @extend .v-align;
+    flex-flow: row wrap;
+    margin: 0 -15px;
+    max-width: 100%;
+    @include media ('<desktop'){
+        width: 100%;
+        margin: 0;
+    }
+    [class^="col-"]{
+        @include media ('<tablet'){
+            padding: 0;
+        }
+    }
+    .form-control-box {
+        margin: 0;
+        @include media ('<tablet'){
+            margin-bottom: 30px;
+        }
+    }
+    .btn {
+        min-width: 187px;
+        @include media ('<widescreen'){
+            min-width: auto;
+        }
+    }
+}

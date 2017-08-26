@@ -1,0 +1,28 @@
+.list-category {
+    @extend %listreset;
+    @extend %clearfix;
+    font-size: 14px;
+    font-weight: 700;
+    color: map-deep-get($list, category, color);
+    margin: 30px 0 36px;
+    text-transform: uppercase;
+    @include media ('<desktop') {
+        margin-bottom: 30px;
+    }
+    li {
+        float: left;
+        margin-right: 16.4px;
+        &:hover {
+            color: map-deep-get($list, category, activeColor);
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        @include media ('<tablet') {
+            margin-right: 8px;
+        }
+    }
+    a {
+        color: inherit;
+    }
+}

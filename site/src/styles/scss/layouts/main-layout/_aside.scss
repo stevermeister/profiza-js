@@ -1,0 +1,43 @@
+.main-sidebar {
+    @extend %clearfix;
+    max-width: 370px;
+    width: 100%;
+    float: left;
+    margin-right: 30px;
+    @include media ('<desktop') {
+        width: 100%;
+        margin: 0 0 26px;
+        max-width: 100%;
+    }
+    @include media ('<tablet') {
+        padding: 0 15px;
+    }
+    .grid-item {
+        @include media ('<tablet') {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.category-sidebar {
+    @extend .main-sidebar;
+    .grid-item {
+        @include media ('<tablet') {
+            margin-bottom: 0;
+        }
+    }
+    .grid-body {
+        padding: 29px 31px 24px 28px;
+        @include media ('<tablet') {
+            padding: 15px;
+        }
+    }
+    .default-list {
+        li {
+            margin-bottom: 24px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.section-search {
+    padding: 153px 0 0;
+    h2 {
+        margin-top: 26px;
+        margin-bottom: 153px;
+    }
+    p {
+        margin: 0;
+    }
+    .default-list {
+        li {
+            margin-bottom: 24px;
+            letter-spacing: .5px;
+            &:last-child {
+                margin-bottom: 14px;
+            }
+        }
+    }
+    .grid-item {
+        margin-bottom: 30px;
+    }
+    .request-box {
+        margin: 7px 0 0;
+    }
+    .form-group {
+        margin-bottom: 41px;
+        @include media ('<desktop') {
+            margin-bottom: 20px;
+        }
+        &:nth-child(3) {
+            margin-bottom: 30px;
+        }
+        &.row {
+            @include media ('<desktop') {
+                margin-right: -15px;
+                margin-left: -15px;
+            }
+        }
+        [class^='col-'] {
+            @include media ('<desktop') {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .small {
+        line-height: 18px;
+    }
+    .form-control + .form-control {
+        margin-top: 10px;
+    }
+    .highlited-box {
+        margin: 0 -30px 38px;
+    }
+    .search-img {
+        @include media ('<desktop') {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.section-search-info {
+    overflow: hidden;
+}

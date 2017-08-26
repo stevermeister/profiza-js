@@ -1,0 +1,26 @@
+.section-promo {
+    padding: 107px 0 0;
+    .row {
+        display: flex;
+        flex-flow: row wrap;
+      &:before,
+      &:after {
+        display: none;
+      }
+        > [class^="col-"] {
+            @include media ('<tablet') {
+                margin-bottom: 30px;
+            }
+            &:last-child {
+                @include media ('<tablet') {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .list-horizontal {
+        a {
+            line-height: 15px;
+        }
+    }
+}

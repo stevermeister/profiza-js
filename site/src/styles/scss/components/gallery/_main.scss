@@ -1,0 +1,26 @@
+$gallery: (
+	radius: map-get($radius, radiusSm)
+);
+
+.gallery{
+	@extend %listreset;
+	@extend %clearfix;
+	margin: 0 -15px;
+	li{
+		display: block;
+		float: left;
+		width: 20%;
+		padding: 0 15px;
+		margin-bottom: 30px;
+		border-radius: map-get($gallery, radius);
+		@include media ('<tablet'){
+			width: 50%;
+		}
+	}
+	img{
+		border-radius: map-get($gallery, radius);
+		@include media ('<tablet'){
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,61 @@
+$vocabluaryComponent: (
+	activeColor: map-get($colors, red),
+	signMain: (
+		color: map-get($colors, darkGray),
+		fontSize: 24px,
+		dashBg: #bed2e2
+	)
+);
+
+.vocabluary-component {
+    margin: 0 0 20px;
+    @include media ('<tablet') {
+        margin: 0;
+    }
+    .h6 {
+        margin: 12px 0 30px;
+        @include media ('<tablet') {
+            margin: 12px 0 15px;
+        }
+        a {
+            @include animate (color);
+            color: inherit;
+            &:hover {
+                color: map-get($vocabluaryComponent, activeColor);
+            }
+        }
+        .text-disabled {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 400;
+            margin-left: 5px;
+        }
+    }
+    .sign-main {
+        position: relative;
+        font-size: map-deep-get($vocabluaryComponent, signMain, fontSize);
+        font-weight: 700;
+        width: 80px;
+        float: left;
+        color: map-deep-get($vocabluaryComponent, signMain, color);
+        text-transform: uppercase;
+        &:after {
+            @include absolute-vertical-centered-el;
+            left: 38px;
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: map-deep-get($vocabluaryComponent, signMain, dashBg);
+            @include media ('<tablet') {
+                left: 25px;
+            }
+        }
+        @include media ('<tablet') {
+            width: 55px;
+        }
+    }
+    .sign-kinds {
+        overflow: hidden;
+    }
+}
+

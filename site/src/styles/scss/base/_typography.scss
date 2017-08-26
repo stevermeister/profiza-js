@@ -1,0 +1,54 @@
+h1,
+.h1 {
+    font-size: map-deep-get($headings, sizes, h1-font-size);
+    font-weight: 500;
+    margin: 0 0 22px;
+}
+
+h2,
+.h2 {
+    font-size: map-deep-get($headings, sizes, h2-font-size);
+    line-height: 36px;
+    font-weight: 500;
+}
+
+h3,
+.h3 {
+    font-size: map-deep-get($headings, sizes, h3-font-size);
+    font-weight: 500;
+}
+
+h4,
+.h4 {
+    font-size: map-deep-get($headings, sizes, h4-font-size);
+    font-weight: 500;
+}
+
+h5,
+.h5 {
+    font-size: map-deep-get($headings, sizes, h5-font-size);
+    font-weight: 500;
+}
+
+h6,
+.h6 {
+    font-size: map-deep-get($headings, sizes, h6-font-size);
+    font-weight: 500;
+}
+
+.link-default {
+    @include animate (color);
+    @include v-align;
+    font-weight: map-deep-get($links, default, fontWeight);
+    color: map-deep-get($links, default, color);
+    &:hover,
+    &:active {
+        color: darken(map-deep-get($links, default, color), 15%);
+    }
+}
+
+.right-icon {
+    [class^="icon-"] {
+        margin-left: 20px;
+    }
+}

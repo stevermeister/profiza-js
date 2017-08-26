@@ -1,0 +1,30 @@
+.thumbnail-review {
+    @extend .thumbnail-user;
+    flex-flow: row wrap;
+    box-shadow: none;
+    .img-container {
+        position: relative;
+        flex: 0 0 auto;
+        height: auto;
+        margin: 0 0 12px;
+        padding: 8px 0 0 22px;
+        @include media ('<tablet') {
+            margin: 0 auto 30px;
+            padding: 0;
+        }
+        .mark {
+            position: absolute;
+            right: -56px;
+            top: 29px;
+        }
+    }
+    .caption {
+        width: 100%;
+        text-align: center;
+    }
+    .h3 {
+        line-height: 20px;
+        color: map-deep-get($thumbnail, review, titleColor);
+        margin: 0 0 5px;
+    }
+}

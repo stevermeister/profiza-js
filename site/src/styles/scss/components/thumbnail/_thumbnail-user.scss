@@ -1,0 +1,34 @@
+.thumbnail-user{
+	@extend .thumbnail;
+	@extend .v-align;
+	font-size: 15px;
+	line-height: 20px;
+	margin-bottom: 19px;
+	box-shadow: none;
+	&:last-child{
+		margin-bottom: 0;
+	}
+	.img-container{
+		height: 60px;
+		margin-right: 14px;
+	}	
+	.caption{
+		color: map-deep-get($thumbnail, user, captionColor);
+		padding: 0;
+		text-align: left;
+	}
+	h3{
+		font-size: inherit;
+		line-height: inherit;
+	}
+	h3,
+	p{
+		margin: 0;
+	}
+	a{
+		color: map-deep-get($thumbnail, user, title);
+		&:hover{
+			color: map-get($colors, red);
+		}
+	}
+}

@@ -1,0 +1,42 @@
+.grid-item-well {
+    box-shadow: 0 0 20px -6px map-deep-get($gridItem, well, shadow);
+    .grid-header {
+        position: relative;
+        font-weight: 700;
+        padding: 26px 45px 23px;
+        border-color: map-deep-get($gridItem, well, headerBorder);
+        cursor: pointer;
+        [class^="icon-"] {
+            @include absolute-vertical-centered-el;
+            right: 32px;
+            font-size: 8px;
+            color: map-deep-get($gridItem, well, icon, color);
+        }
+    }
+    .panel {
+        border: none;
+    }
+}
+
+.grid-body-well {
+    @extend .grid-body;
+    background: map-deep-get($gridItem, well, background);
+    padding: 33px 53px 32px 48px;
+    @include media ('<tablet') {
+        padding: 15px;
+    }
+    .control-label {
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: map-deep-get($gridItem, well, color);
+    }
+    .form-group {
+        margin-bottom: 45px;
+        @include media ('<tablet') {
+            margin-bottom: 30px;
+        }
+    }
+    .custom-radio {
+        margin: 8px 0 0;
+    }
+}

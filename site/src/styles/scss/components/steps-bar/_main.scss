@@ -1,0 +1,91 @@
+$stepsBar: (
+	itemBg: map-get($colors, white),
+	itemBorder: #cdd8e2,
+	active: (
+		itemColor: map-get($colors, red),
+		shadow: #f2f2f2
+	),
+	disabled: (
+		itemColor: #b1bac0,
+		itemBorder: #eef2f5
+	),
+	completed: (
+        itemColor: #b1bac0,
+		itemBorder: #eef2f5
+	),
+	itemIcon: (
+		itemBg: map-get($colors, white),
+		itemShadow: #e6e6e6,
+		itemColor: map-get($colors, green)
+	)
+);
+
+.steps-container {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    width: 100%;
+    max-width: 430px;
+    transform: translateX(-50%);
+    @include media ('<tablet') {
+        max-width: 250px;
+    }
+}
+
+
+.steps-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .step-item {
+        position: relative;
+        font-size: 20px;
+        font-weight: 700;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: map-get($stepsBar, itemBg);
+        border: 3px solid map-get($stepsBar, itemBorder);
+    }
+    .step-counter {
+        @include absolute-centered-el;
+        height: 24px;
+    }
+    .item-icon {
+        @extend .v-align;
+        @include animate (opacity);
+        font-size: 8px;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        right: -7px;
+        top: -3px;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        box-shadow: 0 3px 10px 3px map-deep-get($stepsBar, itemIcon, itemShadow);
+        background: map-deep-get($stepsBar, itemIcon, itemBg);
+        color: map-deep-get($stepsBar, itemIcon, itemColor);
+    }
+    //states for step items 
+    .step-item-disabled {
+        @extend .step-item;
+        color: map-deep-get($stepsBar, disabled, itemColor);
+        border: 3px solid map-deep-get($stepsBar, disabled, itemBorder);
+    }
+    .step-item-active {
+        @extend .step-item;
+        color: map-deep-get($stepsBar, active, itemColor);
+        box-shadow: 0 4px 10px 2px map-deep-get($stepsBar, active, shadow);
+    }
+    .step-item-completed {
+        @extend .step-item;
+        color: map-deep-get($stepsBar, completed, itemColor);
+        border: 3px solid map-deep-get($stepsBar, completed, itemBorder);
+        .item-icon {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

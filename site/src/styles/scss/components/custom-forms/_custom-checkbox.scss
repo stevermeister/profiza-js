@@ -1,0 +1,48 @@
+.custom-checkbox {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    input[type='checkbox'] {
+        @include hide-elem;
+        &:checked {
+            & + .square {
+                [class^='icon-'] {
+                    @include elem-show;
+                }
+            }
+        }
+    }
+    .square {
+        font-size: 6px;
+        position: relative;
+        float: left;
+        flex: 0 0 20px;
+        height: 20px;
+        margin-right: 10px;
+        color: map-deep-get($customForms, checkbox, square, color);
+        border: 1px solid map-deep-get($customForms, checkbox, square, border);
+        border-radius: map-deep-get($customForms, checkbox, square, radius);
+        [class^='icon-'] {
+            @include absolute-centered-el;
+            @include elem-hide;
+        }
+    }
+    .square-xs {
+        @extend .square;
+        flex: 0 0 18px;
+        height: 18px;
+    }
+    .text-box {
+        font-size: 15px;
+        line-height: 22px;
+        font-weight: map-deep-get($customForms, checkbox, textBox, fontWeight);
+        display: block;
+        color: map-deep-get($customForms, checkbox, textBox, color);
+        overflow: hidden;
+    }
+    a {
+        color: inherit;
+    }
+}

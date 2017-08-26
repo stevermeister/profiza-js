@@ -1,0 +1,21 @@
+$slider: (
+	pagination: (
+		background: #78cfd4,
+		activeBackground: map-get($colors, blue)
+	),
+	review: (
+		ratebox: (
+			color: map-get($colors, darkGray)
+		)
+	),
+	counter: (
+		color: map-get($colors, muted),
+		activeColor: map-get($colors, black),
+		buttonColor: #adbfcc,
+		activeButtonColor: darken(#adbfcc, 15%)
+	)
+);
+
+@import 'carousel-review';
+@import "carousel-rating";
+@import "slider-counter";

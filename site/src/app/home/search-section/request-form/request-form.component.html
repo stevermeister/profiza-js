@@ -1,0 +1,65 @@
+<div class="grid-item active" id="request">
+  <div class="grid-header">
+    <span class="items">Заявка на подбор специалиста</span>
+  </div>
+  <div class="grid-body">
+    <div class="request-box">
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <div class="select-box">
+            <select (change)="changeSpecialities($event.target.value)">
+                <option>Категория</option>
+                <option *ngFor="let category of categories" [value]="category.id">{{category.title}}</option>
+
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="select-box">
+            <select>
+                <option>Подкатегория</option>
+                <option *ngFor="let speciality of specialities" [value]="speciality.id">{{speciality.title}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="select-box">
+          <select>
+                    <option>Город</option>
+                    <option *ngFor="let city of cities" [value]="city.id">{{city.title}}</option>
+                </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea rows="1" class="form-control" placeholder="Опишите детали"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="custom-checkbox" for="input-2">
+            <input type="checkbox" id="input-2" checked>
+            <span class="square-xs">
+                <i class="icon-check"></i>
+            </span>
+            <span class="text-muted">Мастер нужен срочно</span>
+        </label>
+      </div>
+      <div class="form-group highlited-box">
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" class="form-control form-control-green" placeholder="Ваше имя">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control form-control-green" placeholder="Телефон">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-default btn-block" (click)="sendRequest()">Отправить</button>
+      </div>
+      <div class="text-muted text-left small">
+        <p>С вами свяжется администратор и порекомендует
+          <br> профессионала по вашим критериям.</p>
+      </div>
+    </div>
+  </div>
+</div>

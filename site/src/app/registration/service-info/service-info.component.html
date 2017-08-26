@@ -1,0 +1,150 @@
+  <div class="steps-container">
+    <div class="steps-bar">
+      <div class="step-item step-item-completed">
+        <div class="item-icon">
+          <i class="icon-check"></i>
+        </div>
+        <span class="step-counter">1</span>
+      </div>
+      <div class="step-item step-item-active">
+        <div class="item-icon">
+          <i class="icon-check"></i>
+        </div>
+        <span class="step-counter">2</span>
+      </div>
+      <div class="step-item step-item-disabled">
+        <div class="item-icon">
+          <i class="icon-check"></i>
+        </div>
+        <span class="step-counter">3</span>
+      </div>
+    </div>
+  </div>
+  <div class="info-box personal-expanded-detail-box">
+    <h2 class="h2">Информация о ваших услугах</h2>
+    <div class="form-group" >
+      <div [ngClass]="{active: true}" class="form-control-box textarea-box">
+        <label for="bio" class="control-label">Коротко о себе</label>
+        <textarea class="form-control"  id="bio" rows="1"></textarea>
+      </div>
+    </div>
+    <div class="form-group" >
+      <div [ngClass]="{active: true}" class="form-control-box">
+        <label for="education" class="control-label">Образование</label>
+        <input type="text" class="form-control"  id="education">
+      </div>
+    </div>
+    <div class="form-group" >
+      <div [ngClass]="{active: true}" class="form-control-box">
+        <label for="diplomas" class="control-label">Степени, звания, дипломы</label>
+        <input type="text" class="form-control"  id="diplomas">
+      </div>
+    </div>
+    <div class="form-group" >
+      <div [ngClass]="{active: true}" class="form-control-box">
+        <label for="experience" class="control-label">Опыт работы</label>
+        <input type="text" class="form-control"  id="experience">
+      </div>
+    </div>
+    <div class="form-group" >
+      <div [ngClass]="{active: true}" class="form-control-box">
+        <label for="speciality" class="control-label">Ваша специализация</label>
+        <input type="text" class="form-control"  id="speciality">
+      </div>
+    </div>
+    <div class="form-group" >
+      <div [ngClass]="{active: true}" class="form-control-box">
+        <label for="clinic" class="control-label">Название клиники</label>
+        <input type="text" class="form-control"  id="clinic">
+      </div>
+    </div>
+  </div>
+  <div class="heading-box">
+    <div class="info-box">
+      <h3 class="h3">Услуги</h3>
+    </div>
+  </div>
+  <div class="info-box">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group" >
+          <div [ngClass]="{active: true}" class="form-control-box">
+            <label for="specialty-select" class="control-label">Специальность</label>
+            <input type="text" class="form-control"  id="specialty-select">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group" >
+          <div [ngClass]="{active: true}" class="form-control-box">
+            <label for="price" class="control-label">Цена</label>
+            <input type="text" class="form-control"  id="price">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div [ngClass]="{active: true}" class="form-control-box text-center">
+      <a href="#" class="btn btn-primary btn-sm btn-icon-left"><i class="icon-add"></i>Добавить ещё одну услугу</a>
+    </div>
+  </div>
+  <div class="heading-box">
+    <div class="info-box">
+      <h3 class="h3">Место проживания</h3>
+    </div>
+  </div>
+  <div class="info-box">
+    <div class="row">
+      <div class="col-md-6" >
+        <div class="form-group">
+          <div [ngClass]="{active: true}" class="form-control-box">
+            <label for="district" class="control-label">Район или метро</label>
+            <input type="text" class="form-control"  id="district">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group" >
+          <div [ngClass]="{active: true}" class="form-control-box">
+            <label for="address" class="control-label">Адрес (если нужен)</label>
+            <input type="text" class="form-control"  id="address">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div [ngClass]="{active: true}" class="form-control-box text-center">
+      <a href="#" class="btn btn-primary btn-sm btn-icon-left"><i class="icon-add"></i>Добавить ещё одно место</a>
+    </div>
+    <label class="custom-checkbox" for="input-2">
+                            <input type="checkbox" id="input-2" checked>
+                            <span class="square">
+                                <i class="icon-check"></i>
+                            </span>
+                            <span class="text-muted">Выезд к клиенту возможен</span>
+                        </label>
+  </div>
+  <div class="heading-box">
+    <div class="info-box">
+      <h3 class="h3">Загрузить файлы</h3>
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="add-media-box info-box">
+      <div class="row">
+        <label for="photo" class="custom-file col-md-6">
+                                    <input type="file" id="photo">
+                                    <span class="round-shape">
+                                    <i class="icon-add"></i>
+                                </span>
+                                    <span>Фото для анкеты</span>
+                                </label>
+        <label for="price-list" class="custom-file col-md-6">
+                                    <input type="file" id="price-list">
+                                    <span class="round-shape">
+                                    <i class="icon-add"></i>
+                                </span>
+                                    <span>Прайс-лист</span>
+                                </label>
+      </div>
+    </div>
+    <a routerLink="../step-3" class="btn btn-default">Отправить</a>
+  </div>

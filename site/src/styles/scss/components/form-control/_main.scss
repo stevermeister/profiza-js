@@ -1,0 +1,120 @@
+.form-control {
+    font-weight: 500;
+    border: none;
+    border-bottom: 1px solid map-get($formControl, border);
+    box-shadow: none;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-radius: 0;
+    height: 28px;
+    background: map-get($formControl, background);
+    resize: none;
+    @include placeholder{
+        font-weight: 400;
+        color: map-get($formControl, placeholderColor);
+    }
+    &:focus,
+    &:active {
+        border-bottom: 1px solid map-get($formControl, border);
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+.form-control-green{
+    @extend .form-control;
+    border-color: map-deep-get($formControl, green, border);
+    &:focus,
+    &:active {
+        border-color: 1px solid map-deep-get($formControl, green, border);
+    }
+}
+
+
+textarea{
+    &.form-control{
+        position: relative;
+        min-height: 70px;
+        z-index: 1000;
+        &:before{
+            position: absolute;
+            content: '';
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: map-get($formControl, border);
+        }
+    }
+}
+
+.control-label {
+    font-weight: 400;
+    color: map-get($formControl, labelColor);
+    margin: 0;
+}
+
+.control-label-light{
+    @extend .control-label;
+    color: map-get($formControl, lightLabelColor);
+}
+
+.form-control-box{
+	position: relative;
+	margin-bottom: 25px;
+    &.active{
+        .control-label{
+            font-size: 12px;
+            top: -13px;
+        }
+    }
+	.control-label{
+        @include animate (bottom font-size);
+		position: absolute;
+		left: 2px;
+        top: 3px;
+	}
+}
+
+.textarea-box{
+    &:after{
+        position: absolute;
+        content: '';
+        top: 28px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: map-get($formControl, border);
+        z-index: 0;
+    }
+    .form-control{
+        min-height: 70px;
+    }
+}
+
+//states of inputs for errors and success
+
+.has-success {
+    .form-control,
+    .form-control:focus {
+        box-shadow: none;
+        border-color: map-get($formControl, border);
+    }
+    .form-control-box {
+        @extend .icon-check;
+        &:before {
+            @extend [class^="icon-"];
+            @include absolute-vertical-centered-el;
+            font-size: 8px;
+            right: -18px;
+            color: map-get($colors, green);
+            @include media ('<tablet') {
+                right: 3px;
+            }
+        }
+    }
+    .control-label {
+        color: map-get($formControl, labelColor);
+    }
+}
+
+@import 'form-control-dark';

@@ -1,0 +1,32 @@
+$customForms: (
+	checkbox: (
+		square: (
+			border: #b0c1ce,
+			radius: 2px,
+			color: #b0c1ce
+		),
+		textBox: (
+			fontWeight: 500,
+			color: map-get($colors, darkGray)
+		)
+	),
+	radioBtn: (
+		radius: 10px,
+		border: #b0c1ce,
+		shadow: #dfe2e4,
+		toggleBg: #afc0cd,
+		color: map-get($colors, muted)
+	),
+	file: (
+		color: map-get($colors, muted),
+		activeColor: darken(map-get($colors, red), 10%), 
+		shapeColor: map-get($colors, red),
+		shapeBorder: map-get($colors, red),
+		activeShapeColor: darken(map-get($colors, red), 10%),
+		activeShapeBorder: darken(map-get($colors, red), 10%)
+	)
+);
+
+@import 'custom-checkbox';
+@import 'custom-radio';
+@import 'custom-file';

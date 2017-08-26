@@ -1,0 +1,99 @@
+$containerSteps: (
+	background: map-get($colors, white),
+	borderRadius: 6px,
+	shadow: map-get($colors, gray),
+);
+
+
+.container-steps {
+    @extend %clearfix;
+    position: relative;
+    max-width: 770px;
+    min-height: 420px;
+    margin: 0 auto 60px;
+    background: map-get($containerSteps, background);
+    border-radius: map-get($containerSteps, borderRadius);
+    padding: 57px 0 40px;
+    box-shadow: 0 3px 5px -2px map-get($containerSteps, shadow);
+    @include media ('<desktop') {
+        padding: 60px;
+        margin: 40px auto 30px;
+        max-width: 500px;
+    }
+    @include media ('<tablet') {
+        padding: 30px 15px;
+        margin: 40px 15px 30px;
+    }
+    .h2 {
+        margin: 0 0 46px;
+        @include media ('<tablet') {
+            margin: 0 0 10px;
+        }
+    }
+    .h3 {
+        margin: 0 0 20px;
+        padding: 16px 0 0;
+    }
+    .info-box {
+        @extend %clearfix;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+    .custom-checkbox {
+        margin-bottom: 31px;
+    }
+    .form-body {
+        margin-bottom: 70px;
+    }
+    .personal-expanded-detail-box {
+        @extend %clearfix;
+        .form-group {
+            margin-bottom: 32px;
+        }
+    }
+    .heading-box {
+        @extend %clearfix;
+        @include shadow;
+        margin: 0 0 33px;
+        .h3 {
+            margin: 0;
+            padding: 8px 0 18px;
+        }
+    }
+    .text-box {
+        font-size: 15px;
+        line-height: 36px;
+        word-spacing: -0.1px;
+        margin: 0 0 60px;
+        @include media ('<tablet') {
+            margin: 0 0 20px;
+        }
+    }
+    .add-media-box {
+        margin: 40px auto 59px;
+        @include media ('<desktop'){
+            margin: 0;
+        }
+        .custom-file {
+            @include media ('<desktop') {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+.personal-detail-box {
+    @extend %clearfix;
+    .form-group {
+        margin-bottom: 32px;
+        &:last-child {
+            margin-bottom: 30px;
+        }
+    }
+    .checkbox-holder {
+        margin-bottom: 69px;
+        @include media ('<desktop') {
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -1,0 +1,103 @@
+//font
+$font: (
+    baseFont: unquote('"Muller"')
+);
+
+//colors
+$colors: (
+    red: #c8614b,
+    black: #000,
+    white: #fff,
+    lightBlue: #eef2f5,
+    blue: #cdd8e2,
+    gray :#929495,
+    muted: #696969,
+    darkGray: #3c3f46,
+    lightGray: #a7a7a7,
+    green: #addb84,
+    salad: #d5e5c6,
+    mint: #ecfbdf
+);
+
+$links: (
+    default: (
+        color: map-get($colors, red),
+        fontWeight: 500
+    )
+);
+
+$buttons: (
+    default: (
+        background: map-get($colors, red),
+        color: map-get($colors, white),
+        border: map-get($colors, red)
+    ),
+    primary: (
+        background: transparent,
+        color: map-get($colors, red),
+        border: map-get($colors, red),
+        hoverBg: map-get($colors, red),
+        hoverColor: map-get($colors, white),
+        hoverBorder: map-get($colors, red)
+    )
+);
+
+//inputs, textareas
+$formControl: (
+    color: map-get($colors, black),
+    background: transparent,
+    labelColor: #696969,
+    lightLabelColor: #a4a4a4,
+    border: #cbd9e4,
+    placeholderColor: map-get($colors, muted),
+    green: (
+      border: map-get($colors, salad)
+    ),
+    dark: (
+      placeholder: (
+        color: map-get($colors, black)
+      )
+    )
+);
+
+
+// Headers
+$headings: (
+  'sizes': (
+    'h1-font-size': 30px,
+    'h2-font-size': 24px,
+    'h3-font-size': 18px,
+    'h4-font-size': 16px,
+    'h5-font-size': 17px,
+    'h6-font-size': 15px
+  ),
+  'fonts': (
+    'headings-font-family': inherit,
+    'headings-color': inherit
+  )
+);
+
+// Breakpoints for include media
+$breakpoints: (
+  'xs-phone': 320px,
+  'phone': 480px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'widescreen': 1200px
+);
+
+// Keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+$radius: (
+    defaultRadius: 6px,
+    radiusSm: 4px
+);

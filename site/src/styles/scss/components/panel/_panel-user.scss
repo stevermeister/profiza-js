@@ -1,0 +1,26 @@
+.panel-user {
+    margin-bottom: 7px;
+    box-shadow: none;
+    .panel-heading {
+        padding: 10px 0 14px;
+        border-bottom: 1px solid  map-deep-get($panel, user, heading, border);
+        .link-default {
+            font-size: 15px;
+            line-height: 21px;
+            color: map-deep-get($links, default, color);
+            [class^="icon"] {
+                margin-left: 14px;
+            }
+        }
+    }
+    .panel-body {
+        line-height: 30px;
+        padding: 10px 0 5px;
+        .list-dotted {
+            margin-top: 4px;
+            li {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

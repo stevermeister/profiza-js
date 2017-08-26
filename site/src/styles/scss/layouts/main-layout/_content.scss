@@ -1,0 +1,26 @@
+.main-content {
+    overflow: hidden;
+    margin-bottom: 112px;
+    @include media ('<desktop') {
+        width: 100%;
+    }
+    @include media ('<tablet') {
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+    .h2 {
+        font-weight: 700;
+        margin-bottom: 17px;
+        @include media ('<tablet') {
+            margin: 0 0 30px;
+        }
+    }
+    .user-card {
+        margin-bottom: 32px;
+    }
+    .list-category {
+        @include media ('<tablet') {
+            margin: 0 0 15px;
+        }
+    }
+}

@@ -1,0 +1,144 @@
+$userCard: (
+	color: map-get($colors, muted),
+	heading-h2-color: map-get($colors, darkGray),
+	addOption: (
+		color: #a8a8a8,
+	),
+	achivements: (
+		checkColor: #8cb779
+	),
+	icons: (
+		pin: (
+			fontSize: 23px,
+			color: #404249
+		),
+		car: (
+			fontSize: 10px,
+			color: #afc2d4
+		),
+		play: (
+			color: #afc2d4
+		),
+		review: (
+			border: #cdd8e2,
+			color: #cdd8e2,
+			activeBorder: darken(#cdd8e2, 10%),
+			activeColor: darken(#cdd8e2, 10%)
+		)
+	)
+);
+
+.user-card{
+	@extend %clearfix;
+	@extend .grid-item;
+	color: map-get($userCard, color);
+	padding: 30px;
+	margin-bottom: 26px;
+	@include media ('<tablet'){
+		padding: 30px 15px;
+	}
+	.add-option{
+		@include v-align;
+		font-size: 13px;
+		line-height: 20px;
+		color: map-deep-get($userCard, addOption, color);
+		margin-bottom: 32px;
+		text-align: left;
+		@include media ('<tablet'){
+			margin-bottom: 10px;
+		}
+		.icon-car{
+			font-size: map-deep-get($userCard, icons, car, fontSize);
+			color: map-deep-get($userCard, icons, car, color);
+			margin-right: 9px;
+		}
+	}
+	.list-achievement{
+		@extend %listreset;
+		font-size: 14px;
+		line-height: 30px;
+		margin-bottom: 39px;
+		@include media ('<tablet'){
+			margin-bottom: 10px;
+		}
+		li{
+			display: flex;
+			align-items: center;
+		}
+		[class^="icon-"]{
+			font-size: 10px;
+			color: map-deep-get($userCard, achivements, checkColor);
+			margin-right: 20px;
+		}
+	}
+	.img-container{
+		position: relative;
+		float: left;
+		@include media ('<desktop'){
+			margin: 0 0 15px;
+		}
+		@include media ('<tablet'){
+			width: 100%;
+		}
+	}
+	.mark{
+		position: absolute;
+		top: -23px;
+		right: 20px;
+	}
+	.h2{
+		line-height: 34px;
+		margin: 2px 0 8px;
+		color: map-get($userCard, heading-h2-color);
+		@include media ('<tablet'){
+			margin-bottom: 15px;
+		}
+	}
+	.h3{
+		font-size: 16px;
+		margin: 0 0 30px;
+		@include media ('<tablet'){
+			margin-bottom: 15px;
+		}
+	}
+	.address{
+		@extend .v-align;
+		line-height: 1.8;
+		margin-bottom: 1px;
+		[class^='icon-']{
+			font-size: map-deep-get($userCard, icons, pin, fontSize); 
+			color: map-deep-get($userCard, icons, pin, color);
+			margin: -5px 15px 0 0;
+		}
+	}
+}
+
+.user-card-img{
+	border-radius: map-get($userCard, radius);
+	@include media ('<tablet'){
+		width: 100%;
+	}
+}
+
+.user-card-description{
+	overflow: hidden;
+	padding: 0 30px;
+	@include media ('<tablet'){
+		width: 100%;
+		padding: 0;
+	}
+}
+
+.video-play-link{
+	@include v-align;
+	font-size: 14px;
+	line-height: 14px;
+	color: map-get($colors, muted);
+	.icon-play{
+		font-size: 21px;
+		margin: 0 9px 0 0;
+		color: map-deep-get($userCard, icons, play, color);
+	}
+}
+
+@import 'user-card-lg';

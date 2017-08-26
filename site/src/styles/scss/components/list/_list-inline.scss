@@ -1,0 +1,12 @@
+.list-inline {
+    @extend .default-list;
+    li {
+        margin: 0 0 20px;
+        padding: 0 0 0 3px;
+    }
+    a:not([class^="link"]) {
+        font-size: 14px;
+        line-height: 14px;
+        width: auto;
+    }
+}

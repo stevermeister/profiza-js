@@ -1,0 +1,30 @@
+<div class="search-bar-box">
+  <div class="search-bar">
+    <div class="row v-align">
+      <div class="col-md-3">
+        <input #query type="text" class="form-control form-control-dark" placeholder="Кого ищем?">
+        <label class="control-label-light text-muted text-italic small">Например: {{randomSpeciality}}</label>
+      </div>
+      <div class="col-md-3">
+        <div class="select-box">
+          <select #cityId>
+              <option value="">Все города</option>
+              <option *ngFor="let city of cities" [value]="city.id">{{city.title}}</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="select-box">
+          <select #categoryId>
+            <option value="">Все категории</option>
+            <option *ngFor="let categoty of categories" [value]="categoty.id">{{categoty.title}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-default btn-block" (click)="search(query.value, cityId.value, categoryId.value)">Искать</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.form-control-dark {
+    @extend .form-control;
+    @include placeholder {
+    	font-size: 15px;
+    	font-weight: 500;
+    	color: map-deep-get($formControl, dark, placeholder, color);
+    }
+}

@@ -1,0 +1,28 @@
+<div class="grid-item grid-item-popular">
+  <div class="grid-cover">
+    <img src="assets/images/card-img.jpg" alt="img-description">
+    <div class="overlay">
+      <span class="grid-label text-uppercase">Популярня рубрика</span>
+      <span class="grid-title">Мастера<br> по ремонту</span>
+    </div>
+  </div>
+  <div class="grid-body">
+    <div class="grid-totals text-center text-muted">
+      <div class="col-xs-6">
+        <span class="counter thin-line top-centered">
+                                            {{offerNumber| niceNumber}}
+                                        </span> предложения
+      </div>
+      <div class="col-xs-6">
+        <span class="counter thin-line top-centered">
+                                            {{servicesNumber| niceNumber}}
+                                        </span> услуги
+      </div>
+    </div>
+    <ul class="list-horizontal grid-list text-muted">
+      <li *ngFor="let speciality of specialities">
+        <a [routerLink]="['search']" [queryParams]="{specialityId: speciality.id}" class="text-dotted">{{speciality.title}},</a></li>
+      <li><a routerLink="" class="link-default"><i class="icon-arrow-right"></i></a></li>
+    </ul>
+  </div>
+</div>

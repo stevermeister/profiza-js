@@ -1,0 +1,16 @@
+<div class="grid-item">
+  <div class="grid-header">
+    <span class="items">Просматривают сейчас</span>
+  </div>
+  <div class="grid-body">
+    <div class="thumbnail-user" *ngFor="let activeUser of activeUsers">
+      <div class="img-container">
+        <img [src]="activeUser.avatar" alt="img-description" class="img-cirlce">
+      </div>
+      <div class="caption">
+        <h3><a [routerLink]="['profile', activeUser.id]">{{activeUser.name}}</a></h3>
+        <p>{{activeUser.speciality}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="filter-bar">
+  <img src="assets/images/filter-bar-img.png" alt="img-description" class="filter-bar-img">
+  <div class="filter-bar-inner">
+    <span>Поиск специалистов по городам:</span>
+    <ul class="list-horizontal filter-list">
+      <li *ngFor="let city of cities; let l = last">
+        <a routerLink="search" [queryParams]="{cityId: city.id}" class="text-muted text-dotted">{{city.title}}
+          <span *ngIf="!l">,</span></a>
+      </li>
+      <li><a routerLink="search" class="link-default">Все города</a></li>
+    </ul>
+  </div>
+</div>

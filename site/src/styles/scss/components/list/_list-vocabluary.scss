@@ -1,0 +1,22 @@
+.list-vocabluary {
+    @extend %listreset;
+    @extend %clearfix;
+    font-size: 14px;
+    color: map-deep-get($list, vocabluary, color);
+    li {
+        margin-bottom: 6px;
+        a{
+            @include animate (color);
+        	color: inherit;
+            &:hover{
+                color: map-deep-get($list, vocabluary, activeColor);
+            }
+        }
+    }
+    .counter {
+    	font-weight: 400;
+        display: inline-block;
+        color: map-deep-get($list, vocabluary, counterColor);
+        margin: 0 0 0 8px;
+    }
+}

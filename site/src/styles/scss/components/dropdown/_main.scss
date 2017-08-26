@@ -1,0 +1,27 @@
+.caret{
+	@extend [class^="icon-"];
+	@extend .icon-chevron-thin-down;
+	font-size: 5px;
+	width: 10px;
+	height: 10px;
+	border: none;
+	margin: 4px 1px 0 4px;
+	&:before{
+		@include animate (transform);
+		display: inline-block;
+	}
+}
+
+.dropdown-toggle{
+	@include v-align;
+}
+
+.dropdown{
+	&.open{
+		.caret{
+			&:before{
+				transform: rotate(180deg);
+			}
+		}
+	}
+}

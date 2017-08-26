@@ -1,0 +1,27 @@
+.page-header {
+    margin: 38px 0 20px;
+    padding: 0;
+    @include media ('<tablet') {
+        margin: 0 15px;
+    }
+    &.page-header-holder {
+        margin-bottom: 85px;
+        @include media ('<desktop') {
+            margin-bottom: 30px;
+        }
+    }
+    .list-horizontal {
+        @include media ('<desktop') {
+            margin: 0 0 30px;
+        }
+        a {
+            line-height: 1;
+        }
+    }
+    .h1 {
+        margin: 0 0 18px;
+        @include media ('<desktop') {
+            margin: 0 0 15px;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+@import 'base/variables';
+@import 'base/functions';
+
+//fonts
+$font-family-sans-serif:  "Muller" !default;
+
+//common styles
+$body-bg: map-get($colors, lightBlue);
+$font-size-base: 15px;
+$font-size-small: 12px;
+$text-muted: map-get($colors, muted);
+
+// //page hedaer
+$page-header-border-color: transparent;
+
+// //buttons
+
+$btn-default-color:              #fff !default;
+$btn-default-bg:                 #c8614b !default;
+$btn-default-border:             #c8614b !default;
+$btn-default-color:              #fff !default;
+$btn-default-bg:                 #c8614b !default;
+$btn-default-border:             #c8614b !default;
+
+$btn-primary-color:              map-deep-get($buttons, primary, color) !default;
+$btn-primary-bg:                 map-deep-get($buttons, primary, background) !default;
+$btn-primary-border:             map-deep-get($buttons, primary, border) !default;
+
+// //breadcrumbs 
+$breadcrumb-bg:                 transparent !default;
+$breadcrumb-color:              map-get($colors, red) !default;
+$breadcrumb-active-color:       map-get($colors, muted) !default;
+$breadcrumb-separator:          '\f178' !default;
+$breadcrumb-padding-horizontal: 0 !default;
+
+
+// //navbar
+// // Basics of a navbar
+$navbar-height:                    92px !default;
+$navbar-margin-bottom:             0 !default;
+$navbar-border-radius:             0 !default;
+
+$navbar-default-color:             map-get($colors, darkGray) !default;
+$navbar-default-bg:                map-get($colors, white) !default;
+$navbar-default-border:            map-get($colors, white) !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           transparent !default;
+$navbar-default-toggle-icon-bar-bg:        map-get($colors, red) !default;
+$navbar-default-toggle-border-color:       transparent !default;
+
+// // Navbar links
+$navbar-default-link-color:                map-get($colors, darkGray) !default;
+$navbar-default-link-hover-color:          map-get($colors, red) !default;
+$navbar-default-link-hover-bg:             transparent !default;
+$navbar-default-link-active-color:         map-get($colors, red) !default;
+$navbar-default-link-active-bg:            transparent !default;
+$navbar-default-link-disabled-color:       #ccc !default;
+$navbar-default-link-disabled-bg:          transparent !default;
+
+// //inputs
+$input-color: map-get($formControl, color) !default;
+$input-border: map-get($formControl, border) !default;
+$input-border-radius: 0;
+$input-bg: transparent;
+$input-height-base: 28px;
+
+

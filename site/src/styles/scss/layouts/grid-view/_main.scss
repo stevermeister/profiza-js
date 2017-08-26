@@ -1,0 +1,29 @@
+$gridView: (
+	socials: (
+		fontSize: 50px,
+		color: map-get($colors, blue),
+		activeColor: #78cfd4
+	)
+);
+
+.grid-view {
+    @extend %clearfix;
+    @include media ('<tablet') {
+        margin: 0;
+    }
+    > [class^='col-'] {
+        margin-bottom: 30px;
+    }
+    .btn-holder {
+        float: left;
+        width: 100%;
+        padding: 30px 0;
+        @include media ('<widescreen') {
+            padding: 0;
+        }
+    }
+}
+
+
+@import 'grid-view-categories';
+@import 'grid-view-socials';
