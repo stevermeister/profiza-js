@@ -16,7 +16,7 @@ export class CityFilterBarComponent implements OnInit {
   public cities: City[];
 
   constructor(private _cityService: CityService) {
-    this._cityService.getAll().subscribe(cities => this.cities = cities);
+    this._cityService.getAll().subscribe(cities => this.cities = cities.slice(0, 5));
   }
 
   ngOnInit() {

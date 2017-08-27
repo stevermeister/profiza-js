@@ -1,3 +1,4 @@
+import { Speciality, CategoryService } from './../category.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public profiCount: number = 157;
+  public specialityCount: number;
+
+  constructor(private _categoryService: CategoryService) {
+    this._categoryService.getAll()
+      .subscribe(specialities => this.specialityCount = specialities.length)
+
+  }
 
   ngOnInit() {
   }

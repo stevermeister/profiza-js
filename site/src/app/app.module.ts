@@ -22,6 +22,7 @@ import { AboutShortComponent } from './home/about-short/about-short.component';
 import { PromoBoxComponent } from './home/promo-box/promo-box.component';
 import { SearchSectionComponent } from './home/search-section/search-section.component';
 import { CategoryBoxComponent } from './home/categories/box/box.component';
+import { CategoryBoxShortComponent } from './home/categories/box-short/box-short.component';
 import { NiceNumberPipe } from './nice-number.pipe';
 import { PopularCategoryComponent } from './home/promo-box/popular-category/popular-category.component';
 import { RequestFormComponent } from './home/search-section/request-form/request-form.component';
@@ -72,6 +73,7 @@ const routes: Routes = [
     PromoBoxComponent,
     SearchSectionComponent,
     CategoryBoxComponent,
+    CategoryBoxShortComponent,
     NiceNumberPipe,
     PopularCategoryComponent,
     RequestFormComponent,

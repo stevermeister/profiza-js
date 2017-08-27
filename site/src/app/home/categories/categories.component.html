@@ -1,9 +1,10 @@
 <div class="grid-view grid-view-categories row">
   <div class="col-md-4 col-sm-6" *ngFor="let category of categories">
-     <profiza-category-box [categoryId]="category.id"></profiza-category-box>
+     <!-- <profiza-category-box [categoryId]="category.id"></profiza-category-box> -->
+     <profiza-category-box-short [categoryId]="category.id"></profiza-category-box-short>
   </div>
 
   <div class="text-center btn-holder">
-    <a [routerLink]="['category']" class="btn btn-primary">Все услуги</a>
+    <a [routerLink]="['search']" class="btn btn-primary">Все cпециалисты</a>
   </div>
 </div>
