@@ -7,23 +7,23 @@
                                 <li><a href="#">{{category?.title}}</a></li>
                                 <li class="active">{{speciality?.title}}</li>
                             </ol>
-                            <h1 class="h1">Фитнес-тренеры</h1>
-                            <ul class="list-horizontal list-middle-dot">
+                            <h1 class="h1">Поиск специалиста</h1>
+                            <!-- <ul class="list-horizontal list-middle-dot">
                                 <li><a href="#" class="text-muted text-dotted">Тренажерный зал</a></li>
                                 <li><a href="#" class="text-muted text-dotted">Зумба</a></li>
                                 <li><a href="#" class="text-muted text-dotted">TRX</a></li>
                                 <li><a href="#" class="text-muted text-dotted">Фитнес-бикини</a></li>
                                 <li><a href="#" class="text-muted text-dotted">Коррекция фигуры</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                         <div class="col-md-6">
-                            <profiza-phone-request></profiza-phone-request>
+                            <!-- <profiza-phone-request></profiza-phone-request> -->
                         </div>
                     </div>
                 </div>
                 <aside class="main-sidebar">
                     <profiza-filter [query]="query" (filterChanged)="updateSearch($event)"></profiza-filter>
-                    <profiza-see-also></profiza-see-also>
+                    <!-- <profiza-see-also></profiza-see-also> -->
                 </aside>
                 <div class="main-content" *ngIf="!users.length">
                     <h2 >По вашему запросу ничего не найдено</h2>
