@@ -16,8 +16,7 @@ export class ProfileUserCardComponent implements OnInit {
   constructor(private _categoryService: CategoryService) { }
 
   ngOnInit() {
-      this._categoryService.getSpeciality(this.user.specialityId)
-          .subscribe((speciality: Speciality) => this.speciality = speciality);
+
   }
 
 }

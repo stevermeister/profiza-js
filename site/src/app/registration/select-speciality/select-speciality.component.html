@@ -3,24 +3,14 @@
   <div class="col-md-7 col-sm-6">
     <div class="row">
       <ul class="default-list-dark">
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 1}">Репетиторы</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 2}">Мастера по ремонту</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 3}">Мастера красоты</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 4}">Врачи</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 5}">Спортивные тренеры</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 6}">Автионструкторы</a></li>
+        <li *ngFor="let category of firstCategorySet"><a [routerLink]="['step-1']" [queryParams]="{categoryId: category.id}">{{category.title}}</a></li>
       </ul>
     </div>
   </div>
   <div class="col-md-5 col-sm-6">
     <div class="row">
       <ul class="default-list-dark">
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 7}">Артисты</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 8}">Домашний персонал</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 9}">IT - фрилансеры</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 10}">Бухгалтера и юристы</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 11}">Ветеринары</a></li>
-        <li><a [routerLink]="['step-1']" [queryParams]="{categoryId: 12}">Другая</a></li>
+        <li *ngFor="let category of secondCategorySet"><a [routerLink]="['step-1']" [queryParams]="{categoryId: category.id}">{{category.title}}</a></li>
       </ul>
     </div>
   </div>

@@ -4,7 +4,7 @@ import { CategoryService } from './category.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -21,7 +21,6 @@ import { SocialBoxComponent } from './home/social-box/social-box.component';
 import { AboutShortComponent } from './home/about-short/about-short.component';
 import { PromoBoxComponent } from './home/promo-box/promo-box.component';
 import { SearchSectionComponent } from './home/search-section/search-section.component';
-import { CategoryBoxComponent } from './home/categories/box/box.component';
 import { CategoryBoxShortComponent } from './home/categories/box-short/box-short.component';
 import { NiceNumberPipe } from './nice-number.pipe';
 import { PopularCategoryComponent } from './home/promo-box/popular-category/popular-category.component';
@@ -42,6 +41,9 @@ import { ProfileUserCardComponent } from './profile/profile-user-card/profile-us
 import { ProfileUserAsideInfoComponent } from './profile/profile-user-aside-info/profile-user-aside-info.component';
 import { ProfileAlsoLikeComponent } from './profile/profile-also-like/profile-also-like.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { StepConterComponent } from './registration/step-conter/step-conter.component';
+import { AdminComponent } from './admin/admin.component';
+import { ToArrayPipe } from './to-array.pipe';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -53,7 +55,8 @@ const routes: Routes = [
     { path: 'step-2', component: ServiceInfoComponent },
     { path: 'step-3', component: SuccessComponent }
   ]},
-  {path: 'profile/:profileId', component: ProfileComponent }
+  {path: 'profile/:profileId', component: ProfileComponent },
+  {path: 'admin', component: AdminComponent }
 ];
 
 @NgModule({
@@ -72,7 +75,6 @@ const routes: Routes = [
     AboutShortComponent,
     PromoBoxComponent,
     SearchSectionComponent,
-    CategoryBoxComponent,
     CategoryBoxShortComponent,
     NiceNumberPipe,
     PopularCategoryComponent,
@@ -91,13 +93,16 @@ const routes: Routes = [
     ProfileUserCardComponent,
     ProfileComponent,
     ProfileUserAsideInfoComponent,
-    ProfileAlsoLikeComponent
+    ProfileAlsoLikeComponent,
+    StepConterComponent,
+    AdminComponent,
+    ToArrayPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes, { useHash: true })
   ],

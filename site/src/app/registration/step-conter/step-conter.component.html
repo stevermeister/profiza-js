@@ -1,0 +1,14 @@
+<div class="steps-container">
+  <div class="steps-bar">
+
+    <div *ngFor="let step of [1,2,3]"
+         class="step-item"
+        [class.step-item-completed]="step < selectedStep"
+        [class.step-item-disabled]="step > selectedStep">
+      <div class="item-icon">
+        <i class="icon-check"></i>
+      </div>
+      <span class="step-counter">{{step}}</span>
+    </div>
+  </div>
+</div>

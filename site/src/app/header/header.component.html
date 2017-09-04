@@ -9,24 +9,22 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" routerLink="">
+        <a class="navbar-brand" routerLink="">
             <img src="assets/images/logo.svg" alt="profiza" class="logo">
           </a>
       </div>
       <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
         <div class="nav navbar-nav navbar-right">
-          <span uib-dropdown>
+          <a routerLink="registration" class="btn btn-primary btn-centered hidden-xs">Разместить услугу</a>
+          <!-- <span uib-dropdown>
             <a id="simple-dropdown" class="dropdown-toggle" uib-dropdown-toggle>
                 Моя Profiza<span class="caret"></span>
-          </a>
+            </a>Î
           <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-            <li ng-repeat="choice in items">
-              <!--<a href>{{choice}}</a>-->
-            </li>
           </ul>
-          </span>
+          </span> -->
         </div>
-        <a routerLink="registration" class="btn btn-primary btn-centered hidden-xs">Разместить услугу</a>
+
       </div>
     </div>
   </div>

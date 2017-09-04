@@ -20,11 +20,6 @@ export class RequestFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeSpecialities(categoryId: string): void {
-    this._categoryService.getSpecialities(Number(categoryId)).subscribe(specialities => {
-      this.specialities = specialities});
-  }
-
   sendRequest() {
     alert('Спасибо, запрос принят в обработку');
   }

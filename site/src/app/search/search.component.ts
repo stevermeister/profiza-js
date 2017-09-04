@@ -24,22 +24,13 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this._route.queryParams.subscribe(({ specialityId, categoryId, query = '' }) => {
       this.query = query;
-      if (specialityId) {
-        this._categoryService.getSpeciality(specialityId).subscribe((speciality) => {
-          this.speciality = speciality;
 
-          this._categoryService.getOne(speciality.categoryId).subscribe((category) => {
-            this.category = category;
-          });
-        });
-      } else if (categoryId) {
-        this._categoryService.getOne(1).subscribe((category) => {
-          this.category = category;
-        });
-      }
-      
-      this._userService.getByFilter({specialityId, categoryId, query}).subscribe(users => this.users = users);
-      
+      this._categoryService.getOne(1).subscribe((category) => {
+        this.category = category;
+      });
+
+      this._userService.getByFilter({ specialityId, categoryId, query }).subscribe(users => this.users = users);
+
     });
   }
 

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { UserModel } from './user.service';
 import { Speciality, Category, CategoryService } from './category.service';
 import { Injectable } from '@angular/core';
@@ -17,9 +18,13 @@ export interface Work {
 export interface User {
   id: number;
   name: string;
+  email: string;
+  phone: string;
+  experience: string;
   avatar: string;
   score: number;
-  specialityId: number;
+  categoryId: number;
+  speciality: number;
   reviewsCount: number;
   photoCount: number;
   location: string;
@@ -28,8 +33,6 @@ export interface User {
 }
 
 export interface UserModel extends User {
-  categoryId?: number;
-  speciality?: Speciality;
   category?: Category;
 }
 
@@ -43,47 +46,38 @@ export interface UserFilter {
 export class UserService {
 
   constructor(
+    private _http: HttpClient,
     private _categoryService: CategoryService
-  ) { } 
+  ) { }
+
+  public tempUser: User;
 
   getOne(id: number) {
-    return Observable.of(users.find(user => user.id === id))
-      .switchMap((user: UserModel) => this._categoryService.getSpeciality(user.specialityId)
-        .switchMap((speciality: Speciality) => {
-          user.speciality = speciality;
-          return Observable.of(user);
-        })
-      );
+    return this._http.get<UserModel>(`https://profiza-api.herokuapp.com/users/${id}`);
   }
 
   getAll(): Observable<UserModel[]> {
-    return Observable.from(users).flatMap((user: UserModel) => {
-      return this._categoryService.getSpeciality(user.specialityId)
-        .switchMap((speciality: Speciality) => {
-          user.speciality = speciality;
-          return Observable.of(user);
-        })
-    })
-    .reduce((users: UserModel[], user: UserModel) => {
-      users.push(user)
-      return users
-    }, [])
+    return this._http.get<UserModel[]>('https://profiza-api.herokuapp.com/users');
+  }
+
+  getAllNew(): Observable<UserModel[]> {
+    return this._http.get<UserModel[]>('https://profiza-api.herokuapp.com/newusers');
+  }
+
+  addNew(newUserData: User) {
+    return this._http.post<User>('https://profiza-api.herokuapp.com/newusers', newUserData);
+  }
+
+  update(userData: User) {
+    return this._http.put<User>(`https://profiza-api.herokuapp.com/newusers/${userData.id}`, userData);
   }
 
   getByFilter(filter: UserFilter) {
     return this.getAll().switchMap((_users: UserModel[]) => {
       const users = _users.filter((user: UserModel) => {
-        const isNotSameSpeciality = filter.specialityId && Number(filter.specialityId) !== user.specialityId;
-        const isNotSameCategory = filter.categoryId && Number(filter.categoryId) !== user.speciality.categoryId;
-        
-        if (isNotSameSpeciality || isNotSameCategory) {
-          return false;
-        }
-
         const areUsersFound = !(filter.query
           && !user.name.includes(filter.query)
           && !user.description.includes(filter.query)
-          && !user.speciality.title.includes(filter.query)
         )
         return areUsersFound;
       })

@@ -17,11 +17,6 @@ export class CategoryBoxShortComponent implements OnInit {
      this._categoryService.getOne(this.categoryId)
        .subscribe(category => {
          this.category = category;
-         this._categoryService.getSpecialities(this.categoryId)
-           .subscribe(specialities => {
-             this.category.specialities = specialities;
-             this.category.specialitiesToShow = specialities.slice(0,5);
-            });
         });
   }
 
