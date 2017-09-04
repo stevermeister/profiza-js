@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "styles": "gulp",
-    "build": "ng build"
+    "build": "ng build",
+    "deploy": "ng build --prod"
   },
   "private": true,
   "dependencies": {
